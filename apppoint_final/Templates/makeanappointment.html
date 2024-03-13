@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+main{
+    color: white;
+}
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+header .logo
+{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 6px;
+}
+.logo span{
+    background-color: white;
+    color: black;
+    padding: 0px 6px 0px 7px;
+}
+.toggle
+{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+.toggle.active
+{
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+.showcase
+{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+  z-index: 2;
+}
+.showcase.active
+{
+  right: 300px;
+}
+ 
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  mix-blend-mode: overlay;
+}
+.text
+{
+  position: relative;
+  z-index: 10;
+  margin-top: 40px;
+}
+ 
+.text h5
+{
+  font-size: 3em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text h6
+{
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text p
+{
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  background:#5fe080;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+/* .text a:hover
+{
+  letter-spacing: 6px;
+} */
+.social
+{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+.menu
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul
+{
+  position: relative;
+}
+.menu ul li
+{
+  list-style: none;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+}
+.menu ul li a:hover
+{
+  color: #03a9f4;
+}
+ 
+ 
+@media (max-width: 991px)
+{
+  .showcase,
+  .showcase header
+  {
+    padding: 40px;
+  }
+  .text h5
+  {
+    font-size: 3em;
+  }
+  .text h6
+  {
+    font-size: 2em;
+  }
+ 
+}
+.navbar nav{
+    display: flex;
+    gap: 70px;
+  }
+  label{
+    color: white;
+  }
+  .navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: light;
+    letter-spacing: 3px;
+   
+  }
+  .navbar a:hover{
+    font-weight: bold;
+    color: #dadada;
+    transition: 75ms;
+    animation-delay: 75ms;
+   
+  }
+ 
+  input{
+    border-radius: 15px;
+    padding: 3px 10px ;
+    border-style: none;
+  }
+  select{
+    border-radius: 15px;
+    padding: 3px 10px;
+    border-style: none;
+  }
+  td{
+    padding: 10px;
+  }
+  img{
+    color: white;
+  }
+ 
+  .r1 td{
+    background-color: #4e4c4c;
+    padding: 25px;
+   
+  }
+  .r2 td{
+    background-color: #7e7c7c;
+    padding: 25px;
+  }
+  button{
+    margin: 20px;
+    padding: 12px 23px;
+    border-radius: 20px;
+    border-style: none;
+    text-transform: uppercase;
+    font-weight: light;
+    letter-spacing: 3px;
+  }
+  button:hover{
+    background-color: #1c1c1c;
+    border-style: groove;
+    border-color: #fff;
+    color: #fff;
+    letter-spacing: 10px;
+    transition: 1s;
+    font-weight: bold;
+  }
+  table{
+    width: 100%;
+  }
+    </style>
+</head>
+<body>
+ 
+   
+    <!-- Video Source -->
+  <!-- https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/ -->
+  <section class="showcase">
+    <header>
+      <h2 class="logo">
+        APP<span>POINT</span>
+      </h2>
+      <div class="navbar">
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/makeanappointment">Book</a>
+            <a href="/upcomingappointments">Appointments</a>
+            <a href="/deleteappointment">Delete</a>
+            <a href="/updateappointment">Update</a>
+            <a href="/feedback">Feedback</a>
+          </nav>
+      </div>
+     
+    </header>
+    <div class="overlay"></div>
+    <div class="text">
+      <h5>AVAILABLE SERVICES</h5><br><br>
+      <centre><h6>Book an Appointment</h6>
+      <div class="Form">
+        <table>
+        <form method = 'POST' action = '/makeanappointment'>
+          <tr class="r1">
+          <td><label for="service_name">Select the service</label></td>
+          <td><select name="service_name" id="service_name">
+              <option value="doctor">Doctor</option>
+              <option value="technician">Technician</option>
+              <option value="hairdresser">Barber</option>
+          </select></td>
+          </tr>
+         
+          <tr class="r2">
+          <td><label for="person_name">Enter person's name:</label></td>
+          <td><input type="text" id="person_name" name="person_name"></td>
+          </tr>
+         
+          <tr class="r1">
+          <td><label for="appointment_date">Select Date:</label></td>
+          <td><input type="date" id="appointment_date" name="appointment_date"></td>
+          </tr>
+         
+          <tr class="r2">
+          <td><label for="appointment_time">Select Time:</label></td>
+          <td><input type="time" id="appointment_time" name="appointment_time"></td>
+          </tr>
+         
+          <tr class="r1">
+          <td><label for="appointment_duration">Enter appointment duration (in minutes):</label></td>
+          <td><input type="number" id="appointment_duration" name="appointment_duration" min="1" step="1"></td>
+          </tr>
+          <br>
+          <tr class="r2">
+          <td><label for="appointment_description">Enter purpose for the appointment:</label></td>
+          <td><input type="text" id="appointment_description" name="appointment_description" min="1" step="1"></td>
+          </tr>
+          <br>
+          <tr class="b1">
+          <td><button type="submit">Book</button></td>
+          </tr>
+       </form>
+      </table>
+    </centre>
+      </div>
+     
+    </div>
+    <ul class="social">
+      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+  </div>
+ 
+ 
+</body>
+</html>
+</body>
+</html>

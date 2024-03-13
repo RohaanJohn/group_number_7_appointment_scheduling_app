@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Form</title>
+<style>
+body {
+background-color: black;
+color: white;
+margin: 0;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: sans-serif;
+}
+ 
+h1, p {
+margin: 0;
+padding: 0;
+line-height: 1.5;
+}
+ 
+ 
+input[type=button] {
+background-color: rgb(57, 183, 57);
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+ 
+ 
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+ 
+label, input, textarea {
+  margin-bottom: 10px;
+}
+ 
+input, textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  background-color: #333;
+  color: white;
+}
+ 
+button {
+  background-color: #6aea6f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ 
+button:hover {
+  background-color: #3e8e41;
+}
+ 
+.unique-element {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+ 
+.unique-element p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+ 
+.app {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+ 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.item {
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+ 
+.radio {
+  display: none;
+}
+ 
+.radio ~ span {
+  font-size: 3rem;
+  filter: grayscale(100);
+  cursor: pointer;
+  transition: 0.3s;
+}
+ 
+.radio:checked ~ span {
+  filter: grayscale(0);
+  font-size: 4rem;
+}
+</style>
+ 
+<script>
+  function submitForm() {
+  var name = document.getElementById('name').value;
+  var feedback = document.getElementById('feedback').value;
+  if (name == '' || feedback == '') {
+  alert('Please provide your name and feedback before submitting!');
+  } else {
+  // Code to submit feedback form to server or database goes here
+  alert('Thank you for your valuable feedback!');
+  document.getElementById('feedbackForm').reset();
+  }
+  }
+  </script>
+ 
+</head>
+<body>
+<form>
+  <br>
+  <br>
+<label for='name'>Name:</label>
+<input type='text' id='name' name='name' required>
+ 
+<label for='email'>Email:</label>
+<input type='email' id='email' name='email' required>
+ 
+<label for='feedback'>Feedback:</label>
+<textarea id='feedback' name='feedback' required></textarea>
+ 
+<input type="button" value="Submit" onclick="submitForm()">
+</form>
+ 
+<div class='unique-element'>
+<p>Thank you for your feedback!</p>
+<p>Take control of your schedule with appPoint :)</p>
+</div>
+ 
+<h1>Rate your experience!</h1>
+ 
+<br>
+<div class="container">
+  <div class="item">
+  <label for="0">
+  <input class="radio" type="radio" name="feedback" id="0" value="0">
+  <span>🤬</span>
+  </label>
+  </div>
+ 
+<div class="item">
+<label for="1">
+<input class="radio" type="radio" name="feedback" id="1" value="1">
+<span>🙁</span>
+</label>
+</div>
+ 
+<div class="item">
+<label for="2">
+<input class="radio" type="radio" name="feedback" id="2" value="2">
+<span>😶</span>
+</label>
+</div>
+ 
+<div class="item">
+<label for="3">
+<input class="radio" type="radio" name="feedback" id="3" value="3">
+<span>😁</span>
+</label>
+</div>
+ 
+<div class="item">
+<label for="4">
+<input class="radio" type="radio" name="feedback" id="4" value="4">
+<span>😍</span>
+</label>
+</div>
+ 
+ 
+</div>
